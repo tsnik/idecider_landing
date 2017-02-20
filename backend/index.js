@@ -22,8 +22,8 @@ MongoClient.connect(url, function(err, db) {
 app.post('/backend/signup', function(req, res) {
   var email = req.body.email;
   if (email) {
-    Emails.findOne({email: email}, function(err, email) {
-      if(email) {
+    Emails.findOne({email: email}, function(err, email_res) {
+      if(email_res) {
         res.redirect('/success.html');
         return;
       }
