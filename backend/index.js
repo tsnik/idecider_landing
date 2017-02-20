@@ -33,14 +33,14 @@ app.post('/backend/sendMessage', function(req, res) {
   var transporter = nodemailer.createTransport({
      service: 'Yandex',
      auth: {
-         user: 'noreplay@idecider.ru', // Your email id
-         pass: 'noreplay123' // Your password
+         user: 'noreply@idecider.ru', // Your email id
+         pass: 'noreply123' // Your password
      }
  });
  var text = "Имя: " + req.body.name + "\nemail: "
   + req.body.email + "\n" + req.body.message;
  var mailOptions = {
- from: 'noreplay@idecider.ru', // sender address
+ from: 'noreply@idecider.ru', // sender address
  to: 'support@idecider.ru', // list of receivers
  subject: req.body.subject, // Subject line
  text: text //
