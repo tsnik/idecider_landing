@@ -19,7 +19,7 @@ MongoClient.connect(url, function(err, db) {
   Emails = db.collection('emails');
 });
 
-app.post('/signup', function(req, res) {
+app.post('/backend/signup', function(req, res) {
   var email = req.body.email;
   if (email) {
     Emails.insert({email: email}, function(err, email){
@@ -29,7 +29,7 @@ app.post('/signup', function(req, res) {
   }
 });
 
-app.post('/sendMessage', function(req, res) {
+app.post('/backend/sendMessage', function(req, res) {
   var transporter = nodemailer.createTransport({
      service: 'Yandex',
      auth: {
