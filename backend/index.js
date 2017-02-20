@@ -22,10 +22,16 @@ MongoClient.connect(url, function(err, db) {
 app.post('/backend/signup', function(req, res) {
   var email = req.body.email;
   if (email) {
-    Emails.insert({email: email}, function(err, email){
-      console.log("Email: " + email);
-      res.redirect('/success.html');
-    })
+    Emails.findOne({email: email}, function(err, email) {
+      if(email) {
+        res.redirect('/success.html');
+        return;
+      }
+      Emails.insert({email: email}, function(err, email){
+        console.log("Email: " + email);
+        res.redirect('/success.html');
+      });
+    });
   }
 });
 
