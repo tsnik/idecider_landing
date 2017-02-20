@@ -260,7 +260,7 @@
 							<p>Мы ответим на каждое сообщение.</p>
 						</header>
 						<div class="box">
-							<form method="post" action="#">
+							<form method="post" action="backend/sendMessage">
 								<div class="row uniform 50%">
 									<div class="6u 12u(mobilep)">
 										<input type="text" name="name" id="name" value="" placeholder="Имя" />
@@ -300,7 +300,7 @@
 					<p>Оставьте свой email, чтобы получить доступ к сервису первыми.</p>
 					<p>После полноценного запуска сервиса, вы сможете пользоваться им на особых условиях.</p>
 
-					<form>
+					<form method="post" action="backend/signup">
 						<div class="row uniform">
 							<div class="7u 12u(mobilep)">
 								<input type="email" name="email" id="email" placeholder="Email" />
